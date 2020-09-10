@@ -1,0 +1,33 @@
+Entrée début du projet Tourelle laser : 10/09/2020
+
+  Bagrow
+  Caraman
+  Chatoev
+  Demaria
+  Marie
+
+Mécanique :
+  - Choisir le laser (un laser de test du software et un laser pour le prototype)
+  - choisir les actionneurs (pas à pas?)
+  - Concevoir la tourelle 
+  
+Electronique :
+  - Designer le schéma 
+  - Designer la carte élec (jusqu'à ~2.54cm/10 de finesse de piste, carte double face)
+  - Choisir les composants (uC entre autre)
+  
+Software :
+  - Détecter les frelons (traitement d'image)
+  - Communiquer les datas (traitement de données caméra -> actionneurs)
+  - Orienter la tourelle (PID)
+  
+Management :
+  - Etablissement d'un cahier des charges
+  - Architecture système
+  - Etablissement d'un planning
+  - Répartition des tâches
+  - Mise au point d'une liste de composants à acheter
+  - Suivi de projet
+  - Conclusion de projet (soutenance/concours)
+  
+  
