@@ -9,3 +9,11 @@ Recherches sur le machine learning
 Choix de l'outil utilisé pour le traitement d'image : tensorflow lite
 Installation Python 3.8.5 sur machine virtuelle linux
 Installation PIP sur machine virtuelle linux
+
+08/10/2020
+Création d'une nouvelle VM dédiée à Tf
+Installation Tensorflow
+Installation Docker
+Installation PIP
+Découverte Colaboratory
+Introduction à Tf
