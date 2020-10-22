@@ -8,7 +8,19 @@ Recherches sur la température léthale d'un frelons (47°C) et des lasers perme
 Recherches sur la fréquence des battements d'ailes des abeilles (200-250Hz).
 Lecture de forum sur la reconnaissance d'image avec le fonctionnement et les github.
 
+Liens utiles :
+https://www.inaturalist.org/ = image insectes
+https://www.mca-ingenierie.fr/fr/blog/271
+https://forum.arduino.cc/index.php?topic=579623.45
+https://github.com/snoop2head/study_in_yellow
+
 Séance 3
 Test du micro avec Mattei pour plus tard implémenter une fonction de reconnaissance des frelons par leur bruit afin de ne pas laisser la reconnaissance par image tourner tout le temps.
 Le micro marche.
 Implémentation d'un code FFT pour traiter le signal et l'adapter aux fréquences souhaitées.
+
+Séance 4
+La FFT implentée marche.
+Recherche de module laser arduino assez puissant pour brûler les ailes d'un frelons, pas trouvé -> solution faire un laser brûleur DIY avec des laser de lecteur blu-ray.
+Test du contrôle des moteurs pas à pas avec un joystick (ça marche).
+Réalisation d'une pièce 3D pour fixer le laser de test aux moteurs pas à pas.
