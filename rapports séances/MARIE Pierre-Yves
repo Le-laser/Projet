@@ -1,1 +1,14 @@
+Séance 1
+Prise de connaissance du sujet et recherches sur internet de projet similaire pour voir les pistes de départ.
+Recherches sur les caméras/laser.
+Visionnage de documentaire sur les frelons asiatiques pour avoir des infos comme leur mode/période de chasse, taille etc.
 
+Séance 2
+Recherches sur la température léthale d'un frelons (47°C) et des lasers permettant d'atteindre cette température.
+Recherches sur la fréquence des battements d'ailes des abeilles (200-250Hz).
+Lecture de forum sur la reconnaissance d'image avec le fonctionnement et les github.
+
+Séance 3
+Test du micro avec Mattei pour plus tard implémenter une fonction de reconnaissance des frelons par leur bruit afin de ne pas laisser la reconnaissance par image tourner tout le temps.
+Le micro marche.
+Implémentation d'un code FFT pour traiter le signal et l'adapter aux fréquences souhaitées.
