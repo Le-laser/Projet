@@ -25,3 +25,7 @@ Installation de PyCharm : IDE python
 Tutoriels PyTorch
 
 Si PyTorch se trouve être trop compliqué ou ne convient pas à notre utilisation, nous passerons à TensorFlow.
+
+19/11/2020
+Etude du contenu du Github https://github.com/Barrois/Detecteur-ESP32-Cam-Blob-Detector
+téléchargement et étude des librairies esp32_camera, esp_timer et arduinoFFT avec V.D. 
