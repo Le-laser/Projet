@@ -29,3 +29,9 @@ Si PyTorch se trouve être trop compliqué ou ne convient pas à notre utilisati
 19/11/2020
 Etude du contenu du Github https://github.com/Barrois/Detecteur-ESP32-Cam-Blob-Detector
 téléchargement et étude des librairies esp32_camera, esp_timer et arduinoFFT avec V.D. 
+
+26/11/2020
+Etude du code du Github récupéré précédemment
+Une partie du code nécessite d'être reprise
+Création d'une fonction de transfert de données (Tx Rx) entre le ESP et un arduino pour envoyer les coordonnées du frelon
+Etude de la librairie JPEGDecoder
