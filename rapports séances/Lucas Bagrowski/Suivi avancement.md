@@ -12,14 +12,15 @@ Choix du laser pour prototype non dangereux <br/>
 ### 25/09/2020
 
 Choix des stepmotors Nema17<br/>
-Création de la pièce 3D pour réaliser la tourelle<br/>
+Création de la pièce 3D pour réaliser le lien entre les deux Stepmotors<br/>
 Étude des ruches mises en place sur le campus <br/>
 <br/> <br/> <br/>
 
 
 ### 08/10/2020
 
-Fabrication carte électronique pour tourrelle 2 axes Stepmotors avec une PCB à trous <br/>
+Fabrication carte électronique pour tourrelle 2 axes Stepmotors avec un PCB à trous <br/>
+Création de la pièce 3D pour fixer la diode Laser de Mattéi sur l'axe d'un Stepmotor <br/>
 Début du code pour tourelle 2 axes Stepmotors <br/>
 <br/> <br/> <br/>
 
@@ -27,14 +28,16 @@ Début du code pour tourelle 2 axes Stepmotors <br/>
 ### 22/10/2020
 
 Assemblage tourelle 2 axes Stepmotors avec pièce imprimée en 3D <br/>
+Ajout de la diode Laser sur la tourelle <br/>
 Fin du code tourelle 2 axes Stepmotors <br/>
+Premiers tests de pointage laser sur un mur <br/>
 <br/> <br/> <br/>
 
 
 ### 19/11/2020
 
-Assemblage tourelle servomoteurs <br/>
-Début du code tourrelle 2 axes servomoteurs<br/>
+Assemblage tourelle servomoteurs donnée par M. Peter <br/>
+Début du code tourrelle 2 axes servomoteurs <br/>
 Explication du fonctionnement de Kicad à Lucas Sabatier<br/>
 <br/> <br/> <br/>
 
@@ -42,5 +45,7 @@ Explication du fonctionnement de Kicad à Lucas Sabatier<br/>
 ### 26/11/2020
 
 Fin du programme servomoteur sur Arduino <br/>
-réimpréssion de la pièce pour tourrelle Stepmotor, qui a cassé lors du transport <br/>
+Mesure de la précision des 2 différentes tourelles <br/>
+Ré-impréssion de la pièce pour tourrelle Stepmotor, qui a cassé lors du transport <br/>
+Création de la pièce 3D pour fixer la diode laser sur l'axe d'un servomoteur <br/>
 <br/> <br/> <br/>
