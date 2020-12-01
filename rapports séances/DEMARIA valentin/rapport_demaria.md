@@ -32,12 +32,14 @@ installation de linux sur raspberry, et documentation sur tensor flow, qui nous 
 j'ai aussi aidé bagrow pour le branchement de son moteur.
 
 **22/10/2020**
+
 installation de pytorche et son envirronement, et visionnage de plusieurs tutoriels.
 
 La SD du rapsberry est surement trop petite pour accueillir tous les envirronements et faire fonctionner les applciations, car je ne peut rien faire avec depuis que j'ai
 installé pytorche.
 
 **19/11/2020**
+
 le machine learning semble vraiment trop lourd en terme de puissance de calcul, il nous faut une autre solution.
 
 Avec Micha, nous avons téléchargé le projet github de MR. Barrois, que nous avons étudié.
