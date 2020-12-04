@@ -1,7 +1,12 @@
 //tests
-#define niveau_gris_mini 245  // nv de gris minimal accepté
+#define niveau_gris_mini 150  // nv de gris minimal accepté
 #define saut_de_pixels 4 // tous les combien de pixels on vérifie
+#define HEIGHT 480    // dépend du frame_size utilisé
+#define WIDTH 640
+#define LEN HEIGHT*WIDTH
 // les initialisations de variables au niveau du traitement d'image
+int recurs_taches(int pos_x, int pos_y, int N, int tab_pix_noir[WIDTH][HEIGHT]);
+
 
 // -----------
 /*********
@@ -79,7 +84,6 @@ void setup() {
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
-  //config.pixel_format = PIXFORMAT_JPEG; 
   config.pixel_format = PIXFORMAT_GRAYSCALE; 
     
   if(psramFound()){
@@ -91,6 +95,13 @@ void setup() {
     config.jpeg_quality = 20;
     config.fb_count = 1;
   }
+  /*FRAMESIZE_UXGA (1600 x 1200)
+    FRAMESIZE_QVGA (320 x 240)
+    FRAMESIZE_CIF (352 x 288)
+    FRAMESIZE_VGA (640 x 480)
+    FRAMESIZE_SVGA (800 x 600)
+    FRAMESIZE_XGA (1024 x 768)
+    FRAMESIZE_SXGA (1280 x 1024)*/
   
   // Init Camera
   esp_err_t err = esp_camera_init(&config);
@@ -153,17 +164,18 @@ void setup() {
   Serial.println(fb -> format);
   */
   //mettre cette init en setup
-  int x = 0, y = 0, tab_pix_noir[(int)fb->width][(int)fb->height] = {0}; // tab contenant tous les pixels // à remettre à 0 au début de la fonction dans lequel on lancera le traitement
+  
+  int x = 0, y = 0, tab_pix_noir[WIDTH][HEIGHT] = {0}; // tab contenant tous les pixels // à remettre à 0 au début de la fonction dans lequel on lancera le traitement
   int taille_tache_max = 0, plus_grosse_tache, num_tache = 0;
-  int x_tache[(int)fb->width] = {0}, y_tache[(int)fb->height] = {0}, taille_tache[(int)fb->len/5] = {0};
+  int x_tache[WIDTH] = {0}, y_tache[HEIGHT] = {0}, taille_tache[LEN/5] = {0};
   
   // fonction analyse niveaux de gris
-  for(y = 0; y < (int)fb -> height; y += saut_de_pixels){ // on analyse tous les saut_de_pixels pixels, en x et y
-    for(x = 0; x < (int)fb -> width; x += saut_de_pixels){         
-      if (fb -> buf[x + (int)fb->width * y] > niveau_gris_mini && tab_pix_noir[x][y] == 0){ // si au-dessus du niveau de gris alors true dans le tableau à la position du px
+  for(y = 0; y < HEIGHT; y += saut_de_pixels){ // on analyse tous les saut_de_pixels pixels, en x et y
+    for(x = 0; x < WIDTH; x += saut_de_pixels){         
+      if (fb -> buf[x + WIDTH * y] > niveau_gris_mini && tab_pix_noir[x][y] == 0){ // si au-dessus du niveau de gris alors true dans le tableau à la position du px
         x_tache[num_tache] = x;
         y_tache[num_tache] = y;
-        taille_tache[num_tache] = recurs_taches(x, y, 0, (int)fb->height, (int)fb -> width, tab_pix_noir);
+        taille_tache[num_tache] = recurs_taches(x, y, 0, tab_pix_noir);
         if(taille_tache[num_tache] > taille_tache_max){
           taille_tache_max = taille_tache[num_tache];
           plus_grosse_tache = num_tache;
@@ -218,25 +230,25 @@ void setup() {
   Serial.println("This will never be printed");
 }
 
-int recurs_taches(int pos_x, int pos_y, int N, int height, int width, int tab_pix_noir[width][height]){
+int recurs_taches(int pos_x, int pos_y, int N, int tab_pix_noir[WIDTH][HEIGHT]){
 
     N++;
 
-    if(tab_pix_noir[pos_x+1][pos_y] > niveau_gris_mini && tab_pix_noir[pos_x+1][pos_y] == 0 && pos_x+1 < width){ // mettre width et height en arg
+    if(tab_pix_noir[pos_x+1][pos_y] > niveau_gris_mini && tab_pix_noir[pos_x+1][pos_y] == 0 && pos_x+1 < WIDTH){ // mettre width et height en arg
         tab_pix_noir[pos_x+1][pos_y] = 1;
-        N = recurs_taches(pos_x+1, pos_y, N, height,  width,  tab_pix_noir);
+        N = recurs_taches(pos_x+1, pos_y, N,  tab_pix_noir);
     }
-    if(tab_pix_noir[pos_x][pos_y+1] > niveau_gris_mini && tab_pix_noir[pos_x][pos_y+1] == 0 && pos_y+1 < height){
+    if(tab_pix_noir[pos_x][pos_y+1] > niveau_gris_mini && tab_pix_noir[pos_x][pos_y+1] == 0 && pos_y+1 < HEIGHT){
         tab_pix_noir[pos_x][pos_y+1] = 1;
-        N = recurs_taches(pos_x, pos_y+1, N, height,  width,  tab_pix_noir);
+        N = recurs_taches(pos_x, pos_y+1, N, tab_pix_noir);
     }
     if(tab_pix_noir[pos_x-1][pos_y] > niveau_gris_mini && tab_pix_noir[pos_x-1][pos_y] == 0 && pos_x-1 >= 0){
         tab_pix_noir[pos_x-1][pos_y] = 1;
-        N = recurs_taches(pos_x-1, pos_y, N, height,  width,  tab_pix_noir);
+        N = recurs_taches(pos_x-1, pos_y, N, tab_pix_noir);
     }
     if(tab_pix_noir[pos_x][pos_y-1] > niveau_gris_mini && tab_pix_noir[pos_x][pos_y-1] == 0 && pos_y-1 >= 0){
         tab_pix_noir[pos_x][pos_y-1] = 1;
-        N = recurs_taches(pos_x, pos_y-1, N, height,  width,  tab_pix_noir);
+        N = recurs_taches(pos_x, pos_y-1, N, tab_pix_noir);
     }
     return N;
 }
