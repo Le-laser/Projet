@@ -1,15 +1,4 @@
-//tests
-#define niveau_gris_mini 150  // nv de gris minimal accepté
-#define saut_de_pixels 4 // tous les combien de pixels on vérifie
-#define HEIGHT 480    // dépend du frame_size utilisé
-#define WIDTH 640
-#define LEN HEIGHT*WIDTH
-// les initialisations de variables au niveau du traitement d'image
-int tab_pix_noir[WIDTH][HEIGHT] = {0}; // tab contenant tous les pixels // à remettre à 0 au début de la fonction dans lequel on lancera le traitement
-int recurs_taches(int pos_x, int pos_y, int N);
 
-
-// -----------
 /*********
   Rui Santos
   Complete project details at https://RandomNerdTutorials.com/esp32-cam-take-photo-save-microsd-card
@@ -33,6 +22,21 @@ int recurs_taches(int pos_x, int pos_y, int N);
 #include "soc/rtc_cntl_reg.h"  // Disable brownour problems
 #include "driver/rtc_io.h"
 #include <EEPROM.h>            // read and write from flash memory
+
+
+//tests
+#define niveau_gris_mini 50  // nv de gris max accepté
+#define saut_de_pixels 4 // tous les combien de pixels on vérifie
+#define HEIGHT 240    // dépend du frame_size utilisé
+#define WIDTH 320
+#define LEN HEIGHT*WIDTH
+// les initialisations de variables au niveau du traitement d'image
+bool tab_pix_noir[WIDTH][HEIGHT] = {0}; // tab contenant tous les pixels // à remettre à 0 au début de la fonction dans lequel on lancera le traitement
+uint16_t recurs_taches(uint16_t pos_x, uint16_t pos_y, uint16_t N);
+
+
+// -----------
+
 
 // define the number of bytes you want to access
 #define EEPROM_SIZE 1
@@ -58,7 +62,7 @@ int recurs_taches(int pos_x, int pos_y, int N);
 
 camera_fb_t * fb = NULL;
 
-int pictureNumber = 0;
+uint16_t pictureNumber = 0;
 
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
@@ -90,11 +94,11 @@ void setup() {
   config.pixel_format = PIXFORMAT_GRAYSCALE; 
     
   if(psramFound()){
-    config.frame_size = FRAMESIZE_VGA; // FRAMESIZE_ + QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
+    config.frame_size = FRAMESIZE_QVGA; // FRAMESIZE_ + QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
     config.jpeg_quality = 20;
     config.fb_count = 2;
   } else {
-    config.frame_size = FRAMESIZE_SVGA;
+    config.frame_size = FRAMESIZE_QVGA;
     config.jpeg_quality = 20;
     config.fb_count = 1;
   }
@@ -161,21 +165,22 @@ void setup() {
 
  // ------------------------------------ Traitement de l'image ------------------------------------ //
 /*
-  Serial.println(fb -> len);
+  Serial.println();
   Serial.println(fb -> width);
   Serial.println(fb -> height);
   Serial.println(fb -> format);
   */
   //mettre cette init en setup
   
-  int x = 0, y = 0;
-  int taille_tache_max = 0, plus_grosse_tache, num_tache = 0;
-  int x_tache[WIDTH] = {0}, y_tache[HEIGHT] = {0}, taille_tache[LEN/5] = {0};
+  uint16_t x = 0, y = 0;
+  uint16_t taille_tache_max = 0;
+  uint8_t plus_grosse_tache, num_tache = 0;
+  uint16_t x_tache[WIDTH] = {0}, y_tache[HEIGHT] = {0}, taille_tache[LEN/5] = {0};
   
   // fonction analyse niveaux de gris
   for(y = 0; y < HEIGHT; y += saut_de_pixels){ // on analyse tous les saut_de_pixels pixels, en x et y
     for(x = 0; x < WIDTH; x += saut_de_pixels){         
-      if (fb -> buf[x + WIDTH * y] > niveau_gris_mini && tab_pix_noir[x][y] == 0){ // si au-dessus du niveau de gris alors true dans le tableau à la position du px
+      if (fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x][y] == false){ // si au-dessus du niveau de gris alors true dans le tableau à la position du px
         x_tache[num_tache] = x;
         y_tache[num_tache] = y;
         taille_tache[num_tache] = recurs_taches(x, y, 0);
@@ -234,23 +239,23 @@ void setup() {
   Serial.println("This will never be printed");
 }
 
-int recurs_taches(int x, int y, int N){
+uint16_t recurs_taches(uint16_t x, uint16_t y, uint16_t N){
 
     N++;
 
-    if(fb -> buf[x + WIDTH * y] > niveau_gris_mini && tab_pix_noir[x+1][y] == 0 && x+1 < WIDTH){ // mettre width et height en arg
+    if(fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x+1][y] == false && x+1 < WIDTH){ // mettre width et height en arg
         tab_pix_noir[x+1][y] = 1;
         N = recurs_taches(x+1, y, N);
     }
-    if(fb -> buf[x + WIDTH * y] > niveau_gris_mini && tab_pix_noir[x][y+1] == 0 && y+1 < HEIGHT){
+    if(fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x][y+1] == false && y+1 < HEIGHT){
         tab_pix_noir[x][y+1] = 1;
         N = recurs_taches(x, y+1, N);
     }
-    if(fb -> buf[x + WIDTH * y] > niveau_gris_mini && tab_pix_noir[x-1][y] == 0 && x-1 >= 0){
+    if(fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x-1][y] == false && x-1 >= 0){
         tab_pix_noir[x-1][y] = 1;
         N = recurs_taches(x-1, y, N);
     }
-    if(fb -> buf[x + WIDTH * y] > niveau_gris_mini && tab_pix_noir[x][y-1] == 0 && y-1 >= 0){
+    if(fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x][y-1] == false && y-1 >= 0){
         tab_pix_noir[x][y-1] = 1;
         N = recurs_taches(x, y-1, N);
     }
