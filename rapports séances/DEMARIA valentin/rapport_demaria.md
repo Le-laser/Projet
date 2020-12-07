@@ -61,4 +61,18 @@ une fois que nous l'aurons, il sera plus simple de comprendre le code, et nous p
 
 nous avons également pu constater que le code n'était pas assez optimisé, il est possible de gagner de précieuses ms dans notre future application.
 
+**03/12/2020 et 04/12/2020**
+
+Avec l'ESP32 Cam nous avons pu faire plusieurs tests. Nous pouvons maintenant prendre des photos, et nous avons commencé à réfléchir à l'algorithme
+qui permettra de détecter un frelon.
+
+Le principe est de regarder 1 pixel sur 4, de comparer son niveau de gris avec une variable, et de ce point, former dans une matrice de position une tache noire qui représentera le frelon. Il nous suffira de prendre la tâche la plus grande, de définir son point centrale, et de tirer un bon gros coup de laser sur le frelon, qui fera beaucoup moins le malin par la suite.
+
+Nous avons d'autres idées pour l'algorithme de détection du frelon, et sommes très intéressés par l'optimisation de code ( condition ternaire, limiter les boucles For et appels de fonctions ).
+
+Je pense que si Mr. Barrois, qui n'est pas un informaticien, a réussi à faire son traitement d'image en 300ms, nous pouvons largement améliorer ce temps et permettre par la suite une meilleure réactivité pour être sur de toucher le frelon pendant son vol stationaire.
+
+
+
+
 
