@@ -53,7 +53,13 @@ void setup() {
   }
   
   for (int i = 0; i < 2500; i++){
-   if(i %50 > 30 && i %50 < 40 && i / 50 > 35 && i / 50 < 45){
+   if(i%50 > 29 && i%50 < 40 && i/50 > 34 && i/50 < 45){
+      img_test[i] = 0;
+    }
+  }
+
+  for (int i = 0; i < 2500; i++){
+   if(i%50 > 9 && i%50 < 15 && i/50 > 14 && i/50 < 20){
       img_test[i] = 0;
     }
   }
@@ -85,7 +91,7 @@ void setup() {
       if (img_test[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x][y] == false){ // si au-dessus du niveau de gris alors true dans le tableau à la position du px
         x_tache[num_tache] = x;
         y_tache[num_tache] = y;
-        taille_tache[num_tache] = recurs_taches(x, y, 0);
+        taille_tache[num_tache] = recurs_taches(x, y, 0) -1;
         if(taille_tache[num_tache] > taille_tache_max){
           taille_tache_max = taille_tache[num_tache];
           plus_grosse_tache = num_tache;
@@ -118,20 +124,20 @@ void setup() {
 uint16_t recurs_taches(uint16_t x, uint16_t y, uint16_t N){
 
     N++;
-
-    if(img_test[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x+1][y] == false && x+1 < WIDTH){ // mettre width et height en arg
+    Serial.printf("[%d][%d] : %d \n",x-30,y-35,N);
+    if(img_test[x+1 + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x+1][y] == false && x+1 < WIDTH){ // mettre width et height en arg
         tab_pix_noir[x+1][y] = 1;
         N = recurs_taches(x+1, y, N);
     }
-    if(img_test[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x][y+1] == false && y+1 < HEIGHT){
+    if(img_test[x + WIDTH * (y+1)] < niveau_gris_mini && tab_pix_noir[x][y+1] == false && y+1 < HEIGHT){
         tab_pix_noir[x][y+1] = 1;
         N = recurs_taches(x, y+1, N);
     }
-    if(img_test[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x-1][y] == false && x-1 >= 0){
+    if(img_test[x-1 + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x-1][y] == false && x-1 >= 0){
         tab_pix_noir[x-1][y] = 1;
         N = recurs_taches(x-1, y, N);
     }
-    if(img_test[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x][y-1] == false && y-1 >= 0){
+    if(img_test[x + WIDTH * (y-1)] < niveau_gris_mini && tab_pix_noir[x][y-1] == false && y-1 >= 0){
         tab_pix_noir[x][y-1] = 1;
         N = recurs_taches(x, y-1, N);
     }
