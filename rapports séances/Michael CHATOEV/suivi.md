@@ -36,3 +36,13 @@ Si PyTorch se trouve être trop compliqué ou ne convient pas à notre utilisati
 - Création d'une fonction de transfert de données (Tx Rx) entre le ESP et un arduino pour envoyer les coordonnées du frelon
 - Etude de la librairie JPEGDecoder
 
+### 03/12/2020
+- Traitement d'image
+
+### 04/12/2020
+- Traitement d'image
+- Création code de test
+
+### 26/11/2020
+- Traitement d'image
+- Création code photo+traitement
