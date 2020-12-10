@@ -1,4 +1,5 @@
-
+ 
+ 
 /*********
   Rui Santos
   Complete project details at https://RandomNerdTutorials.com/esp32-cam-take-photo-save-microsd-card
@@ -26,14 +27,13 @@
 
 //tests
 #define niveau_gris_mini 50  // nv de gris max accepté
-#define saut_de_pixels 4 // tous les combien de pixels on vérifie
-#define HEIGHT 240    // dépend du frame_size utilisé
-#define WIDTH 320
+#define saut_de_pixels 1 // tous les combien de pixels on vérifie
+#define HEIGHT 50   // dépend du frame_size utilisé
+#define WIDTH 50
 #define LEN HEIGHT*WIDTH
 // les initialisations de variables au niveau du traitement d'image
 bool tab_pix_noir[WIDTH][HEIGHT] = {0}; // tab contenant tous les pixels // à remettre à 0 au début de la fonction dans lequel on lancera le traitement
 uint16_t recurs_taches(uint16_t pos_x, uint16_t pos_y, uint16_t N);
-
 
 // -----------
 
@@ -65,7 +65,7 @@ camera_fb_t * fb = NULL;
 uint16_t pictureNumber = 0;
 
 void setup() {
-  WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
+WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
  
   Serial.begin(115200);
   //Serial.setDebugOutput(true);
@@ -118,29 +118,6 @@ void setup() {
   }
   
   sensor_t * s = esp_camera_sensor_get();
-  /*s->set_brightness(s, 0);     // -2 to 2
-  s->set_contrast(s, 0);       // -2 to 2
-  s->set_saturation(s, 0);     // -2 to 2
-  */s->set_special_effect(s, 2); // 0 to 6 (0 - No Effect, 1 - Negative, 2 - Grayscale, 3 - Red Tint, 4 - Green Tint, 5 - Blue Tint, 6 - Sepia)
-  /*s->set_whitebal(s, 1);       // 0 = disable , 1 = enable
-  s->set_awb_gain(s, 1);       // 0 = disable , 1 = enable
-  s->set_wb_mode(s, 0);        // 0 to 4 - if awb_gain enabled (0 - Auto, 1 - Sunny, 2 - Cloudy, 3 - Office, 4 - Home)
-  s->set_exposure_ctrl(s, 1);  // 0 = disable , 1 = enable
-  s->set_aec2(s, 0);           // 0 = disable , 1 = enable
-  s->set_ae_level(s, 0);       // -2 to 2
-  s->set_aec_value(s, 300);    // 0 to 1200
-  s->set_gain_ctrl(s, 1);      // 0 = disable , 1 = enable
-  s->set_agc_gain(s, 0);       // 0 to 30
-  s->set_gainceiling(s, (gainceiling_t)0);  // 0 to 6
-  s->set_bpc(s, 0);            // 0 = disable , 1 = enable
-  s->set_wpc(s, 1);            // 0 = disable , 1 = enable
-  s->set_raw_gma(s, 1);        // 0 = disable , 1 = enable
-  s->set_lenc(s, 1);           // 0 = disable , 1 = enable
-  s->set_hmirror(s, 0);        // 0 = disable , 1 = enable
-  s->set_vflip(s, 0);          // 0 = disable , 1 = enable
-  s->set_dcw(s, 1);            // 0 = disable , 1 = enable
-  s->set_colorbar(s, 0);       // 0 = disable , 1 = enable
-  */
   //Serial.println("Starting SD Card");
   if(!SD_MMC.begin()){
     Serial.println("SD Card Mount Failed");
@@ -153,8 +130,6 @@ void setup() {
     return;
   }
     
- // camera_fb_t * fb = NULL;
-  
   // Take Picture with Camera
   fb = esp_camera_fb_get();
   
@@ -163,7 +138,8 @@ void setup() {
     return;
   }
 
- // ------------------------------------ Traitement de l'image ------------------------------------ //
+
+   // ------------------------------------ Traitement de l'image ------------------------------------ //
 /*
   Serial.println();
   Serial.println(fb -> width);
@@ -175,15 +151,13 @@ void setup() {
   uint16_t x = 0, y = 0;
   uint16_t taille_tache_max = 0;
   uint8_t plus_grosse_tache, num_tache = 0;
-  uint16_t x_tache[WIDTH] = {0}, y_tache[HEIGHT] = {0}, taille_tache[LEN/5] = {0};
-  
-  // fonction analyse niveaux de gris
+  uint16_t x_tache[LEN/5] = {0}, y_tache[LEN/5] = {0}, taille_tache[LEN/5] = {0};
   for(y = 0; y < HEIGHT; y += saut_de_pixels){ // on analyse tous les saut_de_pixels pixels, en x et y
     for(x = 0; x < WIDTH; x += saut_de_pixels){         
       if (fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x][y] == false){ // si au-dessus du niveau de gris alors true dans le tableau à la position du px
         x_tache[num_tache] = x;
         y_tache[num_tache] = y;
-        taille_tache[num_tache] = recurs_taches(x, y, 0);
+        taille_tache[num_tache] = recurs_taches(x, y, 0) -1;
         if(taille_tache[num_tache] > taille_tache_max){
           taille_tache_max = taille_tache[num_tache];
           plus_grosse_tache = num_tache;
@@ -192,19 +166,15 @@ void setup() {
       }
     }
   }
-  Serial.print("plus grosse tâche : \n x : ");
+  Serial.print("plus grosse tâche : \nx : ");
   Serial.println(x_tache[plus_grosse_tache]);
-  Serial.print("y :");
+  Serial.print("y : ");
   Serial.println(y_tache[plus_grosse_tache]);
-  Serial.print("taille de la tache :");
+  Serial.print("taille de la tache : ");
   Serial.println(taille_tache[plus_grosse_tache]);
 
-  // fonction récurs pour la taille des tâches noirs
-  
-  // ---------------------------------- Fin traitement de l'image ---------------------------------- //
-
-  
-  // initialize EEPROM with predefined size
+    // ---------------------------------- Fin traitement de l'image ---------------------------------- //
+    // initialize EEPROM with predefined size
   EEPROM.begin(EEPROM_SIZE);
   pictureNumber = EEPROM.read(0) + 1;
 
@@ -242,20 +212,20 @@ void setup() {
 uint16_t recurs_taches(uint16_t x, uint16_t y, uint16_t N){
 
     N++;
-
-    if(fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x+1][y] == false && x+1 < WIDTH){ // mettre width et height en arg
+    Serial.printf("[%d][%d] : %d \n",x,y,N);
+    if(fb -> buf[x+1 + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x+1][y] == false && x+1 < WIDTH){ // mettre width et height en arg
         tab_pix_noir[x+1][y] = 1;
         N = recurs_taches(x+1, y, N);
     }
-    if(fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x][y+1] == false && y+1 < HEIGHT){
+    if(fb -> buf[x + WIDTH * (y+1)] < niveau_gris_mini && tab_pix_noir[x][y+1] == false && y+1 < HEIGHT){
         tab_pix_noir[x][y+1] = 1;
         N = recurs_taches(x, y+1, N);
     }
-    if(fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x-1][y] == false && x-1 >= 0){
+    if(fb -> buf[x-1 + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x-1][y] == false && x-1 >= 0){
         tab_pix_noir[x-1][y] = 1;
         N = recurs_taches(x-1, y, N);
     }
-    if(fb -> buf[x + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x][y-1] == false && y-1 >= 0){
+    if(fb -> buf[x + WIDTH * (y-1)] < niveau_gris_mini && tab_pix_noir[x][y-1] == false && y-1 >= 0){
         tab_pix_noir[x][y-1] = 1;
         N = recurs_taches(x, y-1, N);
     }
