@@ -46,3 +46,19 @@ J'ai donc visionné des vidéos sur des fabrications de laser DIY (DO IT YOURSEL
 Car le problème est d'atteindre la température léthale (environ 47°C) le plus rapidement possible afin que le frelon n'ait pas le temps de tuer des abeilles.
 Liens utiles : https://www.instructables.com/How-to-make-a-burning-laser-for-CHEAP/
 Ce site explique pas à pas les étapes à suivre pour réaliser un laser capable de graver sur du bois. La prochaine étape sera l'élaboration du laser.
+
+**_Séance 7 : 03/12/2020_**
+
+Test (soudure et mise sous tension) de diodes lasers et de drivers fournis par M.Peter. Malheureusment nous avons branché la diode dans le sens inverse et nous l'avons brûlée.
+Il semblerait qu'il n'y ait pas un sens prédefini dans les pins des diodes, ce que nous avons remarqué en comparant plusieurs datasheet.
+
+**_Séance 8 : 04/12/2020_**
+
+Mattei a réussi à récuperer 2 diodes d'anciens lecteur DVD. Nous les avons donc soudées aux drivers fournis à la séance précédente et nous les avons testés.
+Les diodes fonctionnent mais ils sembleraient qu'elles ne soient pas suffisament puissantes pour neutraliser les frelons asiatiques. Le point lumineux est trop large
+la lumière n'est pas assez focalisé en un seul point précis ce qui implique une baisse de puissance. Il faudrait un système de lentilles permettant de concentrer le
+faisceau lumineux en un point bien précis afin d'éviter de toucher des abeilles par erreur.
+
+**_Séance 9 : 10/12/2020_**
+
+Démontage de consoles Playstation 3 afin de récuperer des diodes blue-ray pour les comparer aux diodes laser rouge qu'on a eu l'habitude de manipuler.
