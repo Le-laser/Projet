@@ -65,4 +65,6 @@ Premiers tests avec le clavier utilisé comme entrée d'information <br/>
 ### 10/12/2020
 
 Modélisation et impression du support Nema17 pour créer la platine fixe de tests <br/>
+L'impression s'est mal déroulée, problème de sous extrusion <br/>
+Ajout de la partie asservissement avec moteur pas à pas <br/>
 <br/> <br/>
