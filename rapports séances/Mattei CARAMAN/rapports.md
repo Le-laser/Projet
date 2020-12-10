@@ -38,3 +38,13 @@ Il faut donc prendre un uC avec un CAN plus rapide.
 ------Séance du 2020/11/26--------------
 
 J'ai optimisé l'algorithme de détection acoustique de frelons pour avoir moins de fausses détections.
+
+------Séance du 2020/12/03--------------
+J'ai essayé de faire fonctionner la diode laser avec le driver fournis par le professeur. Je n'ai pas reussi a la faire fonctionner, possiblement parce que la diode e'tait branchée a l'envers et du coup je l'ai grillé. Pour la prochaine fois je vais amener deux diodes laser rouges extraites d'un lecteur DVD. Cela permettra d'experimenter davantage pour voir comment les diodes laser fonctionnent.
+
+------Séance du 2020/12/04--------------
+En regardant sur internet, j'ai pu voir des exemples de branchement pour les diodes laser et chaque diode est différente, c.à.d qu'il n'y a pas une norme sur les broches. La diode peut etre Case Negative(boitier negatif) ou Case Positive(boitier positif), donc avoir la datasheet du composant est très important.
+
+------Séance du 2020/12/10
+J'ai acheté deux diodes laser bleues(réf: PLPT9 450LA_E et PLPT5),des boitiers optiques pour heberger les diodes laser, des lunettes de protection et quelques regulateurs linéaires LM317 pour fabriquer un driver à courant constant plus puissant.
+J'ai decidé de faire des simulations sur LTSpice pour m'aider à concevoir le driver. Le souci avec le LM317 est que la tension de headroom(Vin-Vout) minimale demandé est de 3V. Cela veut dire qu'a des courants elevés il ne peut pas etre très efficace. Si on pilote la diode laser avec 1.5A(courant max du LM317) alors la puissance dissipée par régulateur est de 3*1.5=4.5W. Donc, pour la solution finale, j'opterai plutot sur un driver switché et non pas linéaire , comme par exemple le NCL30160.
