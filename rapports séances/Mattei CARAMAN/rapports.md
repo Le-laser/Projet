@@ -43,7 +43,7 @@ J'ai optimisé l'algorithme de détection acoustique de frelons pour avoir moins
 J'ai essayé de faire fonctionner la diode laser avec le driver fournis par le professeur. Je n'ai pas reussi a la faire fonctionner, possiblement parce que la diode e'tait branchée a l'envers et du coup je l'ai grillé. Pour la prochaine fois je vais amener deux diodes laser rouges extraites d'un lecteur DVD. Cela permettra d'experimenter davantage pour voir comment les diodes laser fonctionnent.
 
 ------Séance du 2020/12/04--------------
-En regardant sur internet, j'ai pu voir des exemples de branchement pour les diodes laser et chaque diode est différente, c.à.d qu'il n'y a pas une norme sur les broches. La diode peut etre Case Negative(boitier negatif) ou Case Positive(boitier positif), donc avoir la datasheet du composant est très important.
+En regardant sur internet, j'ai pu voir des exemples de branchement pour les diodes laser et chaque diode est différente, c.à.d qu'il n'y a pas une norme sur les broches. La diode peut etre Case Negative(boitier negatif) ou Case Positive(boitier positif), donc avoir la datasheet du composant est très important. On a tenté de bruler une feuille de papier noire avec les lasers mais sans succès. Les diodes rouges testés ont atteint leurs limites dans nos tests.
 
 ------Séance du 2020/12/10
 J'ai acheté deux diodes laser bleues(réf: PLPT9 450LA_E et PLPT5),des boitiers optiques pour heberger les diodes laser, des lunettes de protection et quelques regulateurs linéaires LM317 pour fabriquer un driver à courant constant plus puissant.
