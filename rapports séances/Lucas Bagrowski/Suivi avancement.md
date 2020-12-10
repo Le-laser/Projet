@@ -49,3 +49,20 @@ Mesure de la précision des 2 différentes tourelles <br/>
 Ré-impréssion de la pièce pour tourrelle Stepmotor, qui a cassé lors du transport <br/>
 Création de la pièce 3D pour fixer la diode laser sur l'axe d'un servomoteur <br/>
 <br/> <br/>
+
+### 03/12/2020
+
+Discussion concernant l'échange de données entre la partie acquisition d'image et la partie asservissement mécanique <br/>
+Début du code d'asservissement sur un axe avec servo moteur <br/>
+<br/> <br/>
+
+### 04/12/2020
+
+Fin du code d'asservissement sur un axe avec servo moteur <br/>
+Premiers tests avec le clavier utilisé comme entrée d'information <br/>
+<br/> <br/>
+
+### 10/12/2020
+
+Modélisation et impression du support Nema17 pour créer la platine fixe de tests <br/>
+<br/> <br/>
