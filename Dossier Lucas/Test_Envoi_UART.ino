@@ -7,15 +7,14 @@
 //Include librairies and external files
 #include <Wire.h>
 
+
+//Constantes 
 #define LONGTRAME 3 //Nombre de cases dans la trame
 #define POSCARACSPE 0 //Position du caractère spécial dans la trame
 #define POSITIONX 1 //Position de la valeur X dans la trame
 #define POSITIONY 2 //Position de la valeur X dans la trame
 #define CARACSPE 35 //Caractère spécial signifiant le début de la trame 35 en ASCII = #
 #define ADDRESSEI2CNANO 4 //Addresse I2C de notre Arduino nano
-
-
-//Constantes 
 
 
 //Variables
