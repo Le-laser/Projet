@@ -46,3 +46,10 @@ Si PyTorch se trouve être trop compliqué ou ne convient pas à notre utilisati
 ### 26/11/2020
 - Traitement d'image
 - Création code photo+traitement
+
+### 17/12/2020
+- Traitement d'image
+- Optimisation temps / espace du code de traitement d'image :
+    - Masquage sur les tableaux de bools *gain de 7 bit/pixel
+    - Modification de la logique de stockage des variables caractéristiques des tâches, *gain de 3xLEN/5 octets
+    - Mesure du temps de traitement de l'image, 300.10^-6 sec pour une image de 50x50
