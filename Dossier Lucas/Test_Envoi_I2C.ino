@@ -1,6 +1,6 @@
 //Lucas Bagrowski
 //17/12/2020
-//Test Communication I2C entre 2 Arduinos 
+//Test Communication I2C entre 2 Arduinos
 //Master
 //
 ///////////////////////////////////////
@@ -18,7 +18,6 @@
 
 
 //Variables
-byte val = 0;
 int iTabTrame[LONGTRAME];
 
 
@@ -43,10 +42,11 @@ void loop() {
 
   iTabTrame[POSITIONX]= 157;
   iTabTrame[POSITIONY]= 423;
-  
+
+  Serial.println(" ");
   Serial.print("Position X= ");
   Serial.print(iTabTrame[POSITIONX]);
-  Serial.print("\tPostion Y= ");
+  Serial.print("     Postion Y= ");
   Serial.print(iTabTrame[POSITIONY]);
   
   EnvoiTrame();
@@ -58,6 +58,7 @@ void loop() {
 /////////////   Fonctions  ////////////
 void EnvoiTrame()
 {
+  Serial.print("Envoi");
   //Envoi de la Trame en I2C
   Wire.beginTransmission(ADDRESSEI2CNANO);
   for(int i= 0; i<LONGTRAME; i++)
