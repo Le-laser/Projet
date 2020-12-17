@@ -34,7 +34,7 @@
 // les initialisations de variables au niveau du traitement d'image
 bool tab_pix_noir[WIDTH][HEIGHT] = {0}; // tab contenant tous les pixels // à remettre à 0 au début de la fonction dans lequel on lancera le traitement
 uint16_t recurs_taches(uint16_t pos_x, uint16_t pos_y, uint16_t N);
-
+  unsigned long time1=0,time2=0;
 // init image de test
 uint8_t img_test[2500] = {0};
 
@@ -42,6 +42,7 @@ uint8_t img_test[2500] = {0};
 
 
 void setup() {
+  
   Serial.begin(115200);
   //Serial.setDebugOutput(true);
   //Serial.println();
@@ -82,6 +83,8 @@ void setup() {
   */
   //mettre cette init en setup
   
+  time1=micros();
+
   uint16_t x = 0, y = 0;
   uint16_t taille_tache_max = 0;
   uint8_t plus_grosse_tache, num_tache = 0;
@@ -100,6 +103,9 @@ void setup() {
       }
     }
   }
+   time2=micros();
+   Serial.println(time2-time1);
+    
   Serial.print("plus grosse tâche : \nx : ");
   Serial.println(x_tache[plus_grosse_tache]);
   Serial.print("y : ");
@@ -124,7 +130,7 @@ void setup() {
 uint16_t recurs_taches(uint16_t x, uint16_t y, uint16_t N){
 
     N++;
-    Serial.printf("[%d][%d] : %d \n",x-30,y-35,N);
+    //Serial.printf("[%d][%d] : %d \n",x-30,y-35,N);
     if(img_test[x+1 + WIDTH * y] < niveau_gris_mini && tab_pix_noir[x+1][y] == false && x+1 < WIDTH){ // mettre width et height en arg
         tab_pix_noir[x+1][y] = 1;
         N = recurs_taches(x+1, y, N);
@@ -143,6 +149,7 @@ uint16_t recurs_taches(uint16_t x, uint16_t y, uint16_t N){
     }
     return N;
 }
+
 
 void loop() {
   
