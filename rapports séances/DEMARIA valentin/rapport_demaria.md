@@ -74,5 +74,25 @@ Je pense que si Mr. Barrois, qui n'est pas un informaticien, a réussi à faire 
 
 
 
+**10/12/2020**
 
+nous avons terminé un algorithme qui permet de donner la position en X Y et la taille de la plus grosse tache. Cette tâhe est une accumulation de tâches fonçées, qui représentent le frelon. Cependant, nous avons testé notre programme uniquement avec une image en 50x50, car nous n'avons pas assez de place mémoire sur notre ESP32 pour avoir des tableaux suffisament grands pour utiliser des images prises par l'espCAM.
+plusieurs idées sont à explorer pour le moment.
+
+**17/12/2020**
+aujourd'hui le temps est à l'optimisation du code, et la diminution de l'espace mémoire prise par les tableaux de pixels.
+
+Après discussion avec Mr. Bigot après mon épreuve de rattrapage, la solution du masquaque pour ranger non plus 1 mais 8 pixels dans un octet de données semble être la meilleure solution pour réduire notre consommation de stokage.
+
+Cette optimisation permet de pouvoir multiplier la taille de notre image par x ( plusieurs tableaux sont utilisés, donc pas par 8 ). 
+
+en reprenant l'algorithme de la semaine passée, nous avons décidé de chronométrer notre traitement d'image : 300µs !! 
+
+nous avons donc préféré nous pencher sur la gestion de la mémoire plutôt que sur l'optimisation du temps.
+
+des solutions simple éxistent pour palier notre problème, cependant, cela demande des utilisations d'allocation dynamique et de beaucoup de fonction récursives. Les allocation dynamiques sont à bannir en embarqué, et les fonctions récursives vivement déconseillées. 
+
+en dépitde ça, pour notre traitement d'image nous sommes obligés d'utiliser la récursivité.
+
+il nous faudra encore pas mal de tests et de modifications de notre algorithme pour le rendre utilisable avec une image de 320/240, mais nous sommes en bonne voie, c'est motivant ! 
 
