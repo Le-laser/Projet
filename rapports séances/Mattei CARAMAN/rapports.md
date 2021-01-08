@@ -45,6 +45,10 @@ J'ai essayé de faire fonctionner la diode laser avec le driver fournis par le p
 ------Séance du 2020/12/04--------------
 En regardant sur internet, j'ai pu voir des exemples de branchement pour les diodes laser et chaque diode est différente, c.à.d qu'il n'y a pas une norme sur les broches. La diode peut etre Case Negative(boitier negatif) ou Case Positive(boitier positif), donc avoir la datasheet du composant est très important. On a tenté de bruler une feuille de papier noire avec les lasers mais sans succès. Les diodes rouges testés ont atteint leurs limites dans nos tests.
 
-------Séance du 2020/12/10
+------Séance du 2020/12/10--------------
 J'ai acheté deux diodes laser bleues(réf: PLPT9 450LA_E et PLPT5),des boitiers optiques pour heberger les diodes laser, des lunettes de protection et quelques regulateurs linéaires LM317 pour fabriquer un driver à courant constant plus puissant.
 J'ai decidé de faire des simulations sur LTSpice pour m'aider à concevoir le driver. Le souci avec le LM317 est que la tension de headroom(Vin-Vout) minimale demandé est de 3V. Cela veut dire qu'a des courants elevés il ne peut pas etre très efficace. Si on pilote la diode laser avec 1.5A(courant max du LM317) alors la puissance dissipée par régulateur est de 3*1.5=4.5W. Donc, pour la solution finale, j'opterai plutot sur un driver switché et non pas linéaire , comme par exemple le NCL30160.
+
+------Séance du 2020/12/17--------------
+J'ai assemblé le laser dans son boitier avec Pierre Yves et je l'ai testé sur les frelons. Avec un courant de 500mA débité par l'alimentation, le laser arrive a cramer le frelon facilement. J'ai fait un code de test pour tester l'orientation de la tourelle avec le laser monté dessus a l'aide d'un joystick.
+
