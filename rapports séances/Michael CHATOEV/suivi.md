@@ -53,3 +53,7 @@ Si PyTorch se trouve être trop compliqué ou ne convient pas à notre utilisati
     - Masquage sur les tableaux de bools *gain de 7 bit/pixel
     - Modification de la logique de stockage des variables caractéristiques des tâches, *gain de 3xLEN/5 octets
     - Mesure du temps de traitement de l'image, 300.10^-6 sec pour une image de 50x50
+
+### 08/01/2021
+- Création powerpoint présentation de fin de semestre 7
+- Création machine à état du système du projet
