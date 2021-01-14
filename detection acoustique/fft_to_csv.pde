@@ -127,8 +127,8 @@ void serialEvent(Serial myPort){
       
       // on cherche si le pic = 234 +- 10%
       //if (pic1 >210  && pic1 <=260) {   
-      if (amp[3] > (0.66* (amp[2]+ amp[3]))) {   
-         // les valeurs en 18, 36 et 42 sont-elles des pics ? 
+      if (amp[3] > (0.66* (amp[2]+ amp[4]))) {   
+         // les valeurs en 5, 9 et 11 sont-elles des pics ? 
         if (amp[5] > (0.66* (amp[4]+ amp[6])))        // pic en 375 en SAMPLES 128 (351 en SAMPLES 2048)  
         {
           if (amp[9] > (0.66* (amp[8]+ amp[10])))     // pic en 675 en SAMPLES 128 (703 en SAMPLES 2048)
