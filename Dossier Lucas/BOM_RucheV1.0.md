@@ -1,5 +1,20 @@
 | Part Name| Ref| Value| Qtity on card| Qtity to buy| Link|
 |-|-|:-:|:-:|:-:|-|
+| Batteries Holder| 534-1043| 2 x 18650| 1| ?| [Link](https://www.mouser.fr/ProductDetail/Eagle-Plastic-Devices/12BHC186P-GR/?qs=AQlKX63v8Rv70Ee1H7gwgg%3D%3D)|
+| Tension Regulator| 621-AP63300WU-7| Buck| 1| ?| [Link](https://www.mouser.fr/ProductDetail/Diodes-Incorporated/AP63300WU-7/?qs=bZr6mbWTK5nNNXnHDcrFZg%3D%3D)|
+| Fusible réarmable| | | | | [Link]()|
+| Diode anti inversion| 583-FML340A-W| 40V - 3A| 1| ?| [Link]https://www.mouser.fr/ProductDetail/Rectron/FML340A-W/?qs=5aG0NVq1C4znVqzNSkqGkQ%3D%3D()|
+| | | | | | [Link]()|
+| | | | | | [Link]()|
+| | | | | | [Link]()|
+| | | | | | [Link]()|
+| | | | | | [Link]()|
+
+
+
+
+| Part Name| Ref| Value| Qtity on card| Qtity to buy| Link|
+|-|-|:-:|:-:|:-:|-|
 | Borniers à vis| -| -| 2x02| 0| [Link]()|
 | Buffer| 621-74LVC1G07SE-7| 1 ch| 1| 0| [Link](https://www.mouser.fr/ProductDetail/Diodes-Incorporated/74LVC1G07SE-7?qs=%2Fha2pyFadujDV9Qzz2MeGXIvHLnX77b%2FL3X9Amy49YlegTTVRW7fRg%3D%3D)|
 | Cable Touch Screen USB|538-15134-0403| 4p 300mm| 1| 3| [Link](https://www.mouser.fr/ProductDetail/Molex/15134-0403/?qs=%2Fha2pyFadujBAB%2Fe0qZPL1adkeflFZaabJUQFo19c3XScV2Q8Y1%2FmA%3D%3D)|
