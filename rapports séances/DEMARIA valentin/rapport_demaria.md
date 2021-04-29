@@ -92,7 +92,49 @@ nous avons donc préféré nous pencher sur la gestion de la mémoire plutôt qu
 
 des solutions simple éxistent pour palier notre problème, cependant, cela demande des utilisations d'allocation dynamique et de beaucoup de fonction récursives. Les allocation dynamiques sont à bannir en embarqué, et les fonctions récursives vivement déconseillées. 
 
-en dépitde ça, pour notre traitement d'image nous sommes obligés d'utiliser la récursivité.
+en dépit de ça, pour notre traitement d'image nous sommes obligés d'utiliser la récursivité.
 
 il nous faudra encore pas mal de tests et de modifications de notre algorithme pour le rendre utilisable avec une image de 320/240, mais nous sommes en bonne voie, c'est motivant ! 
+
+**08/01/2021**
+préparation de la soutenance de mi-projet
+
+**15/01/2021**
+Soutenance de mi-projet
+
+**29/01/2021**
+
+premiers essais de l'algoritme permettant d'optimiser la mémoire RAM. 
+Chaque point de notre matrice de position aurait du être, si nous n'étions pas en embarqué, sur un type primaire (int, char, .. ). Ici nous avons donc créé un tableau de Char, sur 8 bit. sur chaque octet il n'y a pas  1, mais 8 positions, ce qui va permettre de réduire considérablement la mémoire utilisée pour un tableau qui ne nécessiterait que de simples booléen. 
+ce gain de mémoire vive nous permet d'augmenter la taille de l'image, pour qu'elle puisse utilisé une image plus ou moins assez grande pour être visible et traitable par l'algoritme.
+
+**12/02/2021**
+
+Ayant appris récemment que les frelons ne sortiraient pas de chez eux avant fin mai, il nous fallait un moyen de tester de manière simple notre algoritme.
+Nous avons décidé de créer un générateur d'image, où vont être créées des tâches plus ou moins grosses.
+en injectant directement l'image dans notre code, nous pouvons tester notre algoritme, avec le système de masquage.
+
+**05/03/2021**
+
+test de l'algoritme de traitement d'image avec l'alogirtme de génération d'image
+
+**12/03/2021** 
+
+Nous nous sommes rendus compte, que la détection de fréquence avec le micro était mal gérée dans le code de Mr Barois, et j'ai commencé à me pencher dessus.
+après avoir fait un petit programme qui prend le son en entrée sur une période T, j'ai pu en extraire la fondamentale de la fréquence dominante.
+
+**19/03/2021**
+n'étant pas très à l'aise avec le traitement du son, nous avons cherché une bibliothèque capable d'extraire les harmoniques d'un signal. malheureusement, sur u système embarqué très peu de bibliothèques de ce genre existent, et nous avons eu beaucoup de mal avec cette partie.
+
+**01/04/2021**
+nous avons continué de chercher à extraire les harmoniques de notre signal, sans succés.
+la partie traitement de son nous a posé problème, et nous pensions que ce que nous avions vu dans le code de Mr. Barrois fonctionnait. 
+
+**15/04/2021** 
+préparation de la soutenance finale
+
+
+
+
+
 
