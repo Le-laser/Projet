@@ -59,7 +59,7 @@ Si PyTorch se trouve être trop compliqué ou ne convient pas à notre utilisati
 - Création machine à état du système du projet
 
 ### 15/01/2021
-- Traitement d'image
+- Soutenance
 
 ### 29/01/2021
 - Traitement d'image
