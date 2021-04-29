@@ -57,3 +57,31 @@ Si PyTorch se trouve être trop compliqué ou ne convient pas à notre utilisati
 ### 08/01/2021
 - Création powerpoint présentation de fin de semestre 7
 - Création machine à état du système du projet
+
+### 15/01/2021
+- Traitement d'image
+
+### 29/01/2021
+- Traitement d'image
+
+### 12/02/2021
+- Création code automatisation de création d'images de test
+
+### 19/02/2021
+- Test traitement d'image Barrois
+
+### 05/03/2021
+- Test Traitement d'image perso
+
+### 12/03/2021
+- Optimisation traitement d'image perso
+
+### 19/03/2021
+- Reconnaissance frelon au micro
+
+### 02/04/2021
+- Code final esp32 reconnaissance frelon au micro + prise photo + envoie en UART
+
+### 15/04/2021
+- Création powerpoint présentation de fin de semestre 8
+- Préparation soutenance
