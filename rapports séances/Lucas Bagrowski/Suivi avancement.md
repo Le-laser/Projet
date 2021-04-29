@@ -86,12 +86,12 @@ Soutenance de mi-parcours <br/>
 
 ### 29/01/2021
 
- <br/>
+Début code communication entre les microcontroleurs UART<br/>
 <br/> <br/>
 
 ### 12/02/2021
 
- <br/>
+Test et fin code communication entre les microcontroleurs <br/>
 <br/> <br/>
 
 ### 19/02/2021
@@ -106,20 +106,20 @@ Soutenance de mi-parcours <br/>
 
 ### 12/03/2021
 
- <br/>
+Début schématique carte <br/>
 <br/> <br/>
 
 ### 19/03/2021
 
- <br/>
+Fin schématique carte <br/>
 <br/> <br/>
 
 ### 02/04/2021
 
- <br/>
+Début routage carte
 <br/> <br/>
 
 ### 15/04/2021
 
- <br/>
+Préparation de la soutenance <br/>
 <br/> <br/>
