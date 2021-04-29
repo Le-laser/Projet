@@ -62,3 +62,50 @@ faisceau lumineux en un point bien précis afin d'éviter de toucher des abeille
 **_Séance 9 : 10/12/2020_**
 
 Démontage de consoles Playstation 3 afin de récuperer des diodes blue-ray pour les comparer aux diodes laser rouge qu'on a eu l'habitude de manipuler.
+
+**_Séance 10 : 17/12/2020_**
+
+Assemblage boitier optique et laser bleu avec Mattei pour bruler les frelons, les tests sont concluants car les frelons fument. Cependant nous n'avons pas de lunettes de protection donc les tests étaient limités.
+
+**_Séance 11 : 08/01/2021_**
+
+Préparation de la soutenance.
+
+**_Séance 12 : 15/01/2021_**
+
+Soutenance de projet.
+
+**_Séance 13 : 29/01/2021_**
+
+Réception des lunettes de protections. Nous avons pu réaliser des tests dans des meilleures conditions pour déterminer le courant a envoyé dans le laser pour qu'il soit le plus efficace. Nous avons une première valeur à 700 mA.
+
+**_Séance 14 : 12/02/2021_**
+
+Suites des tests du laser et montage sur la tourelle pour vérifier que le poids ne pose aucuns problèmes.
+Début du développement d'un programme permettant de créer des images de tests avec Micha.
+
+**_Séance 15 : 19/02/2021_**
+
+Suite du développement du programme avec Micha.
+
+**_Séance 16 : 05/03/2021_**
+
+Fin du développement du programme. Il marche bien, et en le mettant dans un excel on peut voir l'image correspondant a notre code composé de 0 et 1 permettant la création de la tâche noire.
+
+**_Séance 17 : 12/03/2021_**
+
+Maintenant que le code marche, il nous faut l'optimiser avec Micha.
+
+**_Séance 18 : 19/03/2021_**
+
+Optimisation du code.
+
+**_Séance 19 : 02/04/2021_**
+
+Mise en commun de tous nos programme pour tester le projet dans son ensemble.
+
+**_Séance 20 : 15/04/2021_**
+
+Préparation de la soutenance.
+
+
