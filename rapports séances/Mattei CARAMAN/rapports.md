@@ -52,3 +52,35 @@ J'ai decidé de faire des simulations sur LTSpice pour m'aider à concevoir le d
 ------Séance du 2020/12/17--------------
 J'ai assemblé le laser dans son boitier avec Pierre Yves et je l'ai testé sur les frelons. Avec un courant de 500mA débité par l'alimentation, le laser arrive a cramer le frelon facilement. J'ai fait un code de test pour tester l'orientation de la tourelle avec le laser monté dessus a l'aide d'un joystick.
 
+------Séance du 2021/01/08--------------
+J'ai préparé des slides pour la soutenance de mi-parcours.
+
+------Séance du 2021/01/15--------------
+Soutenances de mi-parcours
+
+------Séance du 2021/01/29--------------
+J'ai recu les lunettes de protection que j'ai commandés. 
+J'ai pu faire des tests du laser avec une plus forte puissance toujours avec le driver fourni par le professeur.
+
+------Séance du 2021/02/12--------------
+Suite aux succès des tests en forte puissance du laser, j'ai commencé le developpement d'un driver efficace que je pourrais intégrer dans la tourelle finie.
+Je vais baser ce driver sur le NCL30160. C'est un circuit Buck hysteretique a fort courant(1A)  qui permet de réguler le courant dans la charge précisement.
+
+------Séance du 2021/02/19--------------
+J'ai choisi les composants du driver laser à l'aide de la dasheet du NCL630160 et j'ai fait un premier montage sur breadboard. Pour l'instant, le circuit ne fonctionne pas.
+J'ai fait des tests bas courant avec des LEDs mais reste à voir pourquoi le driver ne débite pas de courant.
+
+------Séance du 2021/03/05--------------
+J'ai refait des tests en essayant de faire varier la résistance "Rsense" qui renvoie l'information sur le courant débité par les LEDs.
+
+------Séance du 2021/03/12--------------
+J'ai créée un fichier excel avec des formules de calculs pour me faciliter les calculs des composants du pilote en courant de la diode laser.
+
+------Séance du 2021/03/19--------------
+J'ai enfin trouvé la cause du dysfonctionnement du circuit Buck. Le problème vient de la résistance de contact des broches du breadboard. Cette résistance (autour de 1 Ohm) vient se rajouter à la résistance Rsense qui est assez faible (0.6 Ohm) et donc on se retrouve avec un courant beaucoup plus faible que ce à quoi on s'attendait. Par conséquent, j'ai commencé à refaire le circuit sur un protoboard, de cette facon je n'ai plus le problème du à la résistance de contact.
+
+------Séance du 2021/04/02--------------
+J'ai continué à construire le protoboard du driver et j'ai pu faire des tests avec la diode laser. J'ai des très bons résultats meme a forte puissance(~700mA).
+
+------Séance du 2021/04/15--------------
+Préparation des slides pour la soutenance finale.
