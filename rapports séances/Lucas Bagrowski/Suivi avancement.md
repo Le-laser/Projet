@@ -76,5 +76,50 @@ Ajout de la partie asservissement avec moteur pas à pas <br/>
 
 ### 08/01/2021
 
-Début du diaporama <br/>
+Diaporama de présentation du semestre 7 <br/>
+<br/> <br/>
+
+### 15/01/2021
+
+Soutenance de mi-parcours <br/>
+<br/> <br/>
+
+### 29/01/2021
+
+ <br/>
+<br/> <br/>
+
+### 12/02/2021
+
+ <br/>
+<br/> <br/>
+
+### 19/02/2021
+
+ <br/>
+<br/> <br/>
+
+### 05/03/2021
+
+ <br/>
+<br/> <br/>
+
+### 12/03/2021
+
+ <br/>
+<br/> <br/>
+
+### 19/03/2021
+
+ <br/>
+<br/> <br/>
+
+### 02/04/2021
+
+ <br/>
+<br/> <br/>
+
+### 15/04/2021
+
+ <br/>
 <br/> <br/>
