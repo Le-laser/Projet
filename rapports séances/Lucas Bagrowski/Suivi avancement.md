@@ -91,24 +91,24 @@ Début code communication entre les microcontroleurs UART<br/>
 
 ### 12/02/2021
 
-Test et fin code communication entre les microcontroleurs <br/>
+Récupération du code de Micha pour faire un prototype à positionner en conditions réelles mais<br/>
+nous avons ensuite appris que les frelons ne sortaient pas avant Juin <br/>
 <br/> <br/>
 
 ### 19/02/2021
 
-Aide Mattéi sur le montage laser <br/>
+Test et fin code communication entre les microcontroleurs <br/>
 Création carte de prototypage pour le laser <br/>
 <br/> <br/>
 
 ### 05/03/2021
 
-Test Laser sur la tourelle avec Mattéi <br/>
+Aide Mattéi sur le montage laser <br/>
 <br/> <br/>
 
 ### 12/03/2021
 
-Récupération du code de Micha pour faire un prototype à positionner en conditions réelles mais<br/>
-nous avons ensuite appris que les frelons ne sortaient pas avant Juin <br/>
+Test Laser que Mattéi a fait fonctionner correctement sur la tourelle <br/>
 <br/> <br/>
 
 ### 19/03/2021
