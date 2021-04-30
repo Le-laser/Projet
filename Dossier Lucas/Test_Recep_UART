@@ -1,0 +1,102 @@
+//Lucas Bagrowski
+//12/02/2021
+//Test Communication UART entre 2 Arduinos 
+//Slave
+//
+///////////////////////////////////////
+//Include librairies and external files
+#include <Wire.h>
+
+
+//Constantes 
+#define LONGTRAME 3 //Nombre de cases dans la trame
+#define POSCARACSPE 0 //Position du caractère spécial dans la trame
+#define POSITIONX 1 //Position de la valeur X dans la trame
+#define POSITIONY 2 //Position de la valeur X dans la trame
+#define CARACSPE 35 //Caractère spécial signifiant le début de la trame 35 en ASCII = #
+
+
+//Variables
+int iTabTrame[LONGTRAME];
+int iLED= 2; //Pour IHM car l'UART est pris pour la com donc connexion PC impossible
+
+//Structures
+
+
+//Prototypes
+//void receiveEvent(int);
+void Reception(int);
+void Blink(int, int);
+
+
+///////////////   Setup   ///////////////
+void setup() {
+  Serial.begin(9600); //Liaison série
+  pinMode(iLED, OUTPUT);
+  digitalWrite(iLED, LOW);
+  Blink(5, 400);
+  delay(1000);
+}
+
+
+///////////////   Loop   ///////////////
+void loop() {
+  
+  //if(Serial)
+  /*
+  if(Serial.availableForWrite())
+  {
+    Blink(2, 200);
+    /*
+    //lorsqu'on reçoit le carac spécial, on sait que l'on est au début de la trame
+    if(Serial.read()= CARACSPE)
+    {
+      //Lorsque l'on reçoit autre chose que le carac spécial, on est à Pos X
+      if(Serial.read() != CARACSPE) iTabTrame[POSITIONX]= Serial.read();
+
+      //Lorsque l'on reçoit autre chose que Pos X, on est à Pos Y
+      if(Serial.read() != iTabTrame[POSITIONX]) iTabTrame[POSITIONY]= Serial.read();
+    }
+  }*/
+  delay(10);
+}
+
+
+/////////////   Fonctions  ////////////
+void Reception(int howMany)
+{
+  //Blink(2, 300);
+  /*
+  while(Serial.available())
+  {
+    //lorsqu'on reçoit le carac spécial, on sait que l'on est au début de la trame
+    if(Serial.read()= CARACSPE)
+    {
+      //Lorsque l'on reçoit autre chose que le carac spécial, on est à Pos X
+      if(Serial.read() != CARACSPE) iTabTrame[POSITIONX]= Serial.read();
+
+      //Lorsque l'on reçoit autre chose que Pos X, on est à Pos Y
+      if(Serial.read() != iTabTrame[POSITIONX]) iTabTrame[POSITIONY]= Serial.read();
+    }
+  }*/
+}
+
+
+void Blink(int iNombre, int iT)
+//iNombre: nombre de clignotements
+//iT: Période en ms
+{
+  int iDemiT = iT/2;
+  for(int i=0; i<iNombre; i++)
+  {
+    digitalWrite(iLED, HIGH);   // turn the LED on (HIGH is the voltage level)
+    delay(iDemiT);                       // wait for a second
+    digitalWrite(iLED, LOW);    // turn the LED off by making the voltage LOW
+    delay(iDemiT);
+  }
+}
+
+
+void serialEvent() {
+  Blink(3, 200);
+}
