@@ -107,7 +107,8 @@ Test Laser sur la tourelle avec Mattéi <br/>
 
 ### 12/03/2021
 
-<br/>
+Récupération du code de Micha pour faire un prototype à positionner en conditions réelles mais<br/>
+nous avons ensuite appris que les frelons ne sortaient pas avant Juin <br/>
 <br/> <br/>
 
 ### 19/03/2021
