@@ -71,7 +71,7 @@ Ajout de la partie asservissement avec moteur pas à pas <br/>
 
 ### 17/12/2020
 
- <br/>
+Impression nouvelle pièce et assemblage <br/>
 <br/> <br/>
 
 ### 08/01/2021
@@ -96,27 +96,31 @@ Test et fin code communication entre les microcontroleurs <br/>
 
 ### 19/02/2021
 
- <br/>
+Aide Mattéi sur le montage laser <br/>
+Création carte de prototypage pour le laser <br/>
 <br/> <br/>
 
 ### 05/03/2021
 
- <br/>
+Test Laser sur la tourelle avec Mattéi <br/>
 <br/> <br/>
 
 ### 12/03/2021
 
-Début schématique carte <br/>
+<br/>
 <br/> <br/>
 
 ### 19/03/2021
 
-Fin schématique carte <br/>
+Choix des composants <br/>
+Import des librairies Kicad <br/>
+Début schématique carte <br/>
 <br/> <br/>
 
 ### 02/04/2021
 
-Début routage carte
+Encore sur le schématique de la carte <br/>
+Problèmes car certains systèmes ne sont pas encore définis <br/>
 <br/> <br/>
 
 ### 15/04/2021
