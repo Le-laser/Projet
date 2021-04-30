@@ -7,5 +7,5 @@
 | Arduino Nano| | | | | [Link]()|
 | ESP32 CAM| | | | | [Link]()|
 | Drivers step motor| A4988| | | | [Link]()|
-| Micro| | | | | [Link]()|
+| Micro| MAX9814| | | | [Link]()|
 | | | | | | [Link]()|
