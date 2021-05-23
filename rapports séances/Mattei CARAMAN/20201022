@@ -1,4 +1,0 @@
--J'arrive a appliquer la fonction FFT sur le signal du microphone et de voir les raies du spectre sous forme de tableur.
--Je suis en train de trouver un moyen pour transmettre les donnes du tableur contenant les informations spectrales. 
-Au final j'utilise Processing pour etablir le lien entre l'Arduino et l'ordinateur.
--Je n'arrive pas a stoquer les informations de l'arduino sur un fichier .csv pour l'instant.
